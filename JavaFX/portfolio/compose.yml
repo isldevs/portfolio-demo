@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: portfolio
+      POSTGRES_USER: portfolio
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portfolio -d portfolio"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [internal]
+  app:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: jdbc:postgresql://db:5432/portfolio
+      DB_USERNAME: portfolio
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:${PORT:-8080}:8080"
+    networks: [internal]
+volumes:
+  postgres_data:
+networks:
+  internal:
+    driver: bridge

@@ -1,0 +1,10 @@
+# Replace your-portfolio.example.com with a DNS name pointing to this server.
+your-portfolio.example.com {
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:8080
+    header {
+        X-Content-Type-Options nosniff
+        Referrer-Policy strict-origin-when-cross-origin
+        X-Frame-Options DENY
+    }
+}

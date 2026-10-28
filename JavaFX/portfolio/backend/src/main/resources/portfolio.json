@@ -1,0 +1,42 @@
+{
+  "profile": {
+    "name": "Your Name",
+    "initials": "YN",
+    "role": "Java Engineer & Software Builder",
+    "headline": "I build reliable digital experiences that scale.",
+    "summary": "I'm a Java developer focused on elegant interfaces, dependable APIs, and thoughtful software architecture. I turn complex requirements into products people enjoy using.",
+    "location": "Phnom Penh, Cambodia",
+    "email": "hello@example.com",
+    "availability": "Available for selected projects",
+    "resumeUrl": "",
+    "social": [
+      {"label": "GitHub", "url": "https://github.com/"},
+      {"label": "LinkedIn", "url": "https://www.linkedin.com/"}
+    ],
+    "stats": [
+      {"value": "08+", "label": "Projects"},
+      {"value": "04+", "label": "Years coding"},
+      {"value": "100%", "label": "Curiosity"}
+    ]
+  },
+  "skills": [
+    {"group": "Backend engineering", "items": ["Java 21", "Spring Boot", "REST APIs", "Spring Data JPA", "Spring Security", "JUnit / Mockito"]},
+    {"group": "Frontend & desktop", "items": ["JavaFX", "HTML5", "CSS3", "JavaScript", "Responsive design"]},
+    {"group": "Data & delivery", "items": ["PostgreSQL", "Docker", "GitHub Actions", "Flyway", "Linux", "System design"]}
+  ],
+  "projects": [
+    {"id": "01", "title": "Lending Workflow Platform", "category": "Backend", "year": "2026", "featured": true,
+     "description": "A structured application workflow with multi-stage reviews, business rules, and auditable decisions.",
+     "stack": ["Java", "Spring Boot", "PostgreSQL"], "demoUrl": "", "sourceUrl": ""},
+    {"id": "02", "title": "Operations Monitoring Console", "category": "Full Stack", "year": "2026", "featured": true,
+     "description": "A clean monitoring experience for service health, readiness checks, and incident visibility.",
+     "stack": ["Spring Boot", "REST API", "JavaScript"], "demoUrl": "", "sourceUrl": ""},
+    {"id": "03", "title": "Portfolio Desktop Client", "category": "Desktop", "year": "2026", "featured": false,
+     "description": "A native JavaFX desktop experience backed by the same API as this portfolio website.",
+     "stack": ["JavaFX", "Java 21", "HTTP Client"], "demoUrl": "", "sourceUrl": ""}
+  ],
+  "experience": [
+    {"period": "2024 — Present", "role": "Software Engineer", "company": "Your Company", "description": "Building robust Java services, designing API contracts, and improving application reliability."},
+    {"period": "2022 — 2024", "role": "Application Developer", "company": "Previous Company", "description": "Developed and maintained business applications with a focus on maintainable code and quality."}
+  ]
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1021">
+  <meta name="description" content="A software engineer's portfolio: Java, Spring Boot, JavaFX, software architecture, and selected projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your Name — Software Engineer">
+  <meta property="og:description" content="Java engineer building thoughtful digital products.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+  <title>Your Name | Software Engineer</title>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a href="#top" class="brand" aria-label="Portfolio home"><span class="brand-mark" id="brand-initials">YN</span><span id="brand-name">YOURNAME<span class="brand-dot">.</span></span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" type="button" class="icon-button" aria-label="Switch color theme" title="Switch color theme"><span id="theme-icon">☾</span></button>
+        <a class="button button-sm button-outline nav-contact" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+        <button id="menu-toggle" type="button" class="icon-button menu-toggle" aria-label="Toggle menu" aria-controls="nav-links" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="about">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="availability-dot"></span><span id="availability">Welcome to my portfolio</span></div>
+        <p class="hero-intro">HELLO, I'M <span id="intro-name">YOUR NAME</span></p>
+        <h1 id="hero-headline">Building <span class="headline-accent">better digital</span> experiences.</h1>
+        <p class="hero-summary" id="hero-summary">I turn ideas into reliable software. Explore my work across Java, Spring Boot, APIs, and desktop applications.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="#contact">Get in touch <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-social" id="hero-social"></div>
+      </div>
+      <div class="hero-art reveal" aria-label="Abstract illustrated developer workspace">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="code-window">
+          <div class="code-top"><div class="window-dots"><i></i><i></i><i></i></div><span>Portfolio.java</span><span class="code-top-icon">⌘</span></div>
+          <div class="code-content" aria-hidden="true">
+            <div><span class="code-purple">public class</span> <span class="code-blue">Developer</span> {</div>
+            <div class="indent">String <span class="code-yellow">focus</span> = <span class="code-green">"Impact"</span>;</div>
+            <div class="indent">String[] <span class="code-yellow">stack</span> = {</div>
+            <div class="indent2"><span class="code-green">"Java"</span>, <span class="code-green">"Spring"</span>,</div>
+            <div class="indent2"><span class="code-green">"JavaFX"</span>, <span class="code-green">"Cloud"</span></div>
+            <div class="indent">};</div>
+            <div>&nbsp;</div>
+            <div class="indent"><span class="code-purple">void</span> <span class="code-blue">build</span>() {</div>
+            <div class="indent2"><span class="code-purple">while</span> (<span class="code-yellow">curious</span>) {</div>
+            <div class="indent3">learn();</div><div class="indent3">ship();</div>
+            <div class="indent2">}</div><div class="indent">}</div>
+            <div>}</div>
+          </div>
+        </div>
+        <div class="float-chip chip-top"><span class="chip-symbol">✦</span> SOLVING REAL PROBLEMS</div>
+        <div class="float-chip chip-bottom"><span class="online-light"></span> SYSTEMS ONLINE <span class="chip-check">✓</span></div>
+      </div>
+    </section>
+
+    <div class="stats-border"><div class="wrap stats-grid" id="stats"><div class="stat"><strong>—</strong><span>Loading profile</span></div></div></div>
+
+    <section class="section wrap" id="projects">
+      <div class="section-heading reveal"><div><p class="section-kicker">01 / SELECTED WORK</p><h2>Projects I've <em>built.</em></h2><p class="section-desc">A collection of ideas turned into real, practical software.</p></div><span class="section-decoration" aria-hidden="true">↗</span></div>
+      <div class="filters" id="project-filters" aria-label="Filter projects"></div>
+      <div class="project-grid" id="project-grid"><p class="loading">Loading projects…</p></div>
+    </section>
+
+    <section class="section skill-section" id="skills"><div class="wrap">
+      <div class="section-heading reveal"><div><p class="section-kicker">02 / THE TOOLKIT</p><h2>Tools of the <em>trade.</em></h2><p class="section-desc">Technologies I use to design, build, and ship software.</p></div></div>
+      <div class="skill-grid" id="skill-grid"></div>
+    </div></section>
+
+    <section class="section wrap" id="experience">
+      <div class="section-heading reveal"><div><p class="section-kicker">03 / MY JOURNEY</p><h2>Experience & <em>growth.</em></h2><p class="section-desc">A timeline of turning problems into products.</p></div></div>
+      <div class="timeline" id="experience-list"></div>
+    </section>
+
+    <section class="section contact-section" id="contact"><div class="wrap contact-grid">
+      <div class="contact-info reveal"><p class="section-kicker">04 / SAY HELLO</p><h2>Have an idea?<br><em>Let's build it.</em></h2><p class="section-desc">Interested in a project, collaboration, or just want to connect? My inbox is open.</p>
+        <div class="contact-meta"><span class="meta-label">EMAIL ME AT</span><a id="contact-email" href="mailto:hello@example.com">hello@example.com</a></div>
+        <div class="contact-meta"><span class="meta-label">BASED IN</span><span id="contact-location">Phnom Penh, Cambodia</span></div>
+      </div>
+      <form class="contact-form reveal" id="contact-form" novalidate>
+        <div class="form-header"><span class="form-icon">✉</span><div><h3>Send me a message</h3><p>I'd love to hear what you're working on.</p></div></div>
+        <div class="form-pair"><label>Your name<input type="text" name="name" maxlength="100" autocomplete="name" placeholder="Jane Doe" required></label><label>Email address<input type="email" name="email" maxlength="254" autocomplete="email" placeholder="jane@company.com" required></label></div>
+        <label>Subject<input type="text" name="subject" maxlength="160" placeholder="Let's collaborate" required></label>
+        <label>Message<textarea name="message" rows="5" minlength="10" maxlength="3000" placeholder="Tell me a little about your project..." required></textarea></label>
+        <div class="honeypot" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="button button-primary form-submit" type="submit" id="send-button">Send message <span aria-hidden="true">↗</span></button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><span class="footer-brand" id="footer-name">YOUR NAME<span class="brand-dot">.</span></span><span>Built with intention. Powered by Java + Spring Boot.</span><a href="#top">Back to top ↑</a></div></footer>
+</body>
+</html>

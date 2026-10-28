@@ -1,0 +1,37 @@
+name: vaadin-portfolio
+services:
+  database:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-portfolio}
+      POSTGRES_USER: ${DB_USERNAME:-portfolio}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Run python3 scripts/init_env.py first}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [internal]
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-portfolio}
+      DB_USERNAME: ${DB_USERNAME:-portfolio}
+      DB_PASSWORD: ${DB_PASSWORD:?Missing DB_PASSWORD}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:?Missing ADMIN_USERNAME}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Missing ADMIN_PASSWORD}
+    depends_on:
+      database:
+        condition: service_healthy
+    networks: [internal]
+volumes:
+  postgres_data:
+networks:
+  internal:

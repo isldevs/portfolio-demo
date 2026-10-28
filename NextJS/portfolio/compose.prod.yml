@@ -1,0 +1,25 @@
+# Use with compose.yml on a VPS; Caddy terminates HTTPS and serves only the frontend.
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN to a real DNS name before production deploy}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      frontend:
+        condition: service_healthy
+    networks:
+      - public
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  caddy_data:
+  caddy_config:

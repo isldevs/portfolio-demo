@@ -1,0 +1,36 @@
+server:
+  port: ${SERVER_PORT:8080}
+  shutdown: graceful
+  forward-headers-strategy: native
+  error:
+    include-message: never
+    include-stacktrace: never
+spring:
+  application:
+    name: personal-portfolio
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/portfolio}
+    username: ${DB_USERNAME:portfolio}
+    password: ${DB_PASSWORD:}
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+  mvc:
+    problemdetails:
+      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+logging:
+  level:
+    root: INFO
